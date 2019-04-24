@@ -43,9 +43,9 @@ When submitting a job, the submission file will typically include a header with 
 #SBATCH -t 0-00:05 		# Runtime in D-HH:MM
 #SBATCH -p serial 		# Partition to submit to e.g serial, GTX, Tesla
 #SBATCH --mem=100 		# Memory pool for all cores (see also --mem-per-cpu)
-#SBATCH -o hostname.out # File to which STDOUT will be written
-#SBATCH -e hostname.err # File to which STDERR will be written
-#SBATCH --job-name=name # Job will be named "name" 
+#SBATCH -o hostname.out 	# File to which STDOUT will be written
+#SBATCH -e hostname.err 	# File to which STDERR will be written
+#SBATCH --job-name=name 	# Job will be named "name" 
 ```
 
 
@@ -61,7 +61,7 @@ A simple example of a serial CPU script using Sire looks like this:
 #SBATCH -n 1
 #SBATCH -t 24:00:00
 
-source /etc/profile.d/module.sh 	# makes sure that the modules are available to the job environment
+source /etc/profile.d/module.sh 		# makes sure that the modules are available to the job environment
 module load cuda/7.5 				#load the required modules for sire, i.e. openMM and 										cuda
 module load sire/17.1.0_no_avx
 module load openmm/6.3
@@ -78,7 +78,7 @@ Slurm also has the capability of using job arrays. The simplest example of using
 #!/bin/bash
 #...						#use all the desired #SBATCH options here
 
-#SBATCH --array=1-100 		#This will submit a task array using array ID's from 1-100 and 								then run in each directory the program
+#SBATCH --array=1-100 				#This will submit a task array using array ID's from 1-100 and 									then run in each directory the program
 cd dir.$SLURM_ARRAY_TASK_ID
 srun program
 ```
@@ -119,7 +119,7 @@ In case you want to parallelise your computations to GPUs instead of computing o
 #SBATCH -o somd_GPU.out
 #SBATCH -p GPU 							#now choose the GPU partition (e.g. GTX, Tesla)
 #SBATCH -n 1
-#SBATCH --gres=gpu:1 					#requests one GPU
+#SBATCH --gres=gpu:1 						#requests one GPU
 #SBATCH --time 24:00:00
 
 source /etc/profile.d/module.sh
