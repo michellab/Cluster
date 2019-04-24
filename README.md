@@ -8,6 +8,7 @@ The following document contains documentation for users and administrators of th
 ## User Documentation
 
 [1. Getting started guide](getting_started.md)
+
 [2. Cluster resources](Resources.md)    
 
 ## Administrator Documentation 
