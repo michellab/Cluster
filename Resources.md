@@ -16,6 +16,8 @@ scp -r files username@section9.chem.ed.ac.uk:~
 scp -r files username@plato.chem.ed.ac.uk:~
 ```
 
+Alternatively, [you can mount a cluster's file system to your local workstation](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh).
+
 Login:
 
 ```
